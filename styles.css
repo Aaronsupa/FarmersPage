@@ -55,9 +55,52 @@ main {
     width: 100%;
     padding: 2rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: calc(100vh - 120px); /* Subtract header and footer height */
+    position: relative;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.lorem-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.lorem-content h2 {
+    color: #2c5530;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 3px solid #4a7c59;
+    padding-bottom: 0.5rem;
+}
+
+.lorem-content h3 {
+    color: #2c5530;
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem 0;
+    border-left: 4px solid #4a7c59;
+    padding-left: 1rem;
+}
+
+.lorem-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    color: #444;
 }
 
 section {
@@ -116,9 +159,55 @@ footer {
     padding: 1rem 0;
 }
 
-/* Fixed Rock Path */
+/* Back Button */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: linear-gradient(135deg, #2c5530, #4a7c59);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(44, 85, 48, 0.3);
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(44, 85, 48, 0.4);
+    background: linear-gradient(135deg, #4a7c59, #2c5530);
+}
+
+.back-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(44, 85, 48, 0.3);
+}
+
+.back-button::before {
+    content: '←';
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.link-text {
+    color:#f8f9fa;
+    text-decoration: none;
+}
+
+/* Rock Path */
 .rock-path {
-    left: 50%;
+    position: absolute;
+    top: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
     pointer-events: none;
@@ -164,7 +253,6 @@ footer {
     height: 15%;
     background: rgba(0, 0, 0, 0.2);
     border-radius: 50%;
-    filter: blur(1px);
 }
 
 /* Individual rock variations */
@@ -193,6 +281,131 @@ footer {
     transform: rotate(-20deg);
 }
 
+/* Rock tooltip text */
+.rock {
+    position: relative;
+}
+
+.rock::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f8f9fa;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 1002;
+    margin-bottom: 10px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    backface-visibility: hidden;
+    will-change: opacity, visibility, transform;
+}
+
+/* Rock image tooltips - multiple images at different angles */
+.rock-image-tooltip {
+    position: absolute;
+    width: 120px;
+    height: 90px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 1003;
+    overflow: hidden;
+    border: 2px solid #2c5530;
+    transform-origin: center;
+}
+
+.rock-image-tooltip img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.rock-image-tooltip::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+}
+
+/* All images positioned above the rock with angled outer ones */
+.rock-image-tooltip:nth-child(1) {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px) rotate(-15deg);
+    margin-bottom: 15px;
+    z-index: 1004;
+}
+
+.rock-image-tooltip:nth-child(1)::after {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-color: #2c5530;
+}
+
+.rock-image-tooltip:nth-child(2) {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    margin-bottom: 15px;
+    z-index: 1005;
+}
+
+.rock-image-tooltip:nth-child(2)::after {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-color: #2c5530;
+}
+
+.rock-image-tooltip:nth-child(3) {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(20%) translateY(-10px) rotate(15deg);
+    margin-bottom: 15px;
+    z-index: 1004;
+}
+
+.rock-image-tooltip:nth-child(3)::after {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-color: #2c5530;
+}
+
+/* Tooltip arrow */
+.rock::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 1002;
+    margin-bottom: 4px;
+    backface-visibility: hidden;
+    will-change: opacity, visibility, transform;
+}
+
 /* Hover effects */
 .rock:hover {
     transform: scale(1.5) rotate(0deg);
@@ -201,6 +414,36 @@ footer {
         inset 0 3px 6px rgba(255, 255, 255, 0.3),
         inset 0 -3px 6px rgba(0, 0, 0, 0.4);
     z-index: 1001;
+    cursor: pointer;
+}
+
+.rock:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px) translateZ(0);
+}
+
+.rock:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px) translateZ(0);
+}
+
+.rock:hover .rock-image-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.rock:hover .rock-image-tooltip:nth-child(1) {
+    transform: translateX(-120%) translateY(-15px) rotate(-15deg) translateZ(0);
+}
+
+.rock:hover .rock-image-tooltip:nth-child(2) {
+    transform: translateX(-50%) translateY(-15px) translateZ(0);
+}
+
+.rock:hover .rock-image-tooltip:nth-child(3) {
+    transform: translateX(20%) translateY(-15px) rotate(15deg) translateZ(0);
 }
 
 /* Responsive design */
@@ -241,6 +484,20 @@ footer {
     .rock:hover {
         transform: scale(1.2) rotate(0deg);
     }
+    
+    /* Mobile back button adjustments */
+    .back-button {
+        top: 15px;
+        left: 15px;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+    
+    /* Mobile image tooltip adjustments */
+    .rock-image-tooltip {
+        width: 80px;
+        height: 60px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -255,5 +512,19 @@ footer {
     
     .rock:hover {
         transform: scale(1.15) rotate(0deg);
+    }
+    
+    /* Small mobile back button adjustments */
+    .back-button {
+        top: 10px;
+        left: 10px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    /* Small mobile image tooltip adjustments */
+    .rock-image-tooltip {
+        width: 60px;
+        height: 45px;
     }
 }

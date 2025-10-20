@@ -13,16 +13,59 @@
     
     <main>
         <div class="rock-path">
-            <div class="rock rock-1" style="left: 50px; top: -50px;"></div>
-            <div class="rock rock-2" style="left: 130px; top: -30px;"></div>
-            <div class="rock rock-3" style="left: 180px; top: 40px;"></div>
-            <div class="rock rock-4" style="left: 220px; top: 50px;"></div>
-            <div class="rock rock-5" style="left: 290px; top: 70px;"></div>
+            <div class="rock rock-1" style="left: 5px; top: -50px;" data-tooltip="Beginnings" onclick="goToSite1()">
+                <div class="rock-image-tooltip">
+                    <img src="images/house.jpg" alt="House Preview" onerror="this.style.display='none'">
+                </div>
+                <div class="rock-image-tooltip">
+                    <img src="images/garden.jpg" alt="Garden Preview" onerror="this.style.display='none'">
+                </div>
+                <div class="rock-image-tooltip">
+                    <img src="images/farm.jpg" alt="Farm Preview" onerror="this.style.display='none'">
+                </div>
+            </div>
+            <div class="rock rock-2" style="left: 130px; top: -30px;" data-tooltip="Visit Site 2" onclick="goToSite2()">
+                <div class="rock-image-tooltip">
+                    <!--<img src="images/rock2.jpg" alt="Site 2 Preview" onerror="this.style.display='none'">-->
+                </div>
+            </div>
+            <div class="rock rock-3" style="left: 220px; top: 40px;" data-tooltip="Visit Site 3" onclick="goToSite3()">
+                <div class="rock-image-tooltip">
+                    <!--<img src="images/rock3.jpg" alt="Site 3 Preview" onerror="this.style.display='none'">-->
+                </div>
+            </div>
+            <div class="rock rock-4" style="left: 300px; top: 50px;" data-tooltip="Visit Site 4" onclick="goToSite4()">
+                <div class="rock-image-tooltip">
+                    <!--<img src="images/rock4.jpg" alt="Site 4 Preview" onerror="this.style.display='none'">-->
+                </div>
+            </div>
+            <div class="rock rock-5" style="left: 420px; top: 70px;" data-tooltip="Visit Site 5" onclick="goToSite5()">
+                <div class="rock-image-tooltip">
+                    <!--<img src="images/rock5.jpg" alt="Site 5 Preview" onerror="this.style.display='none'">-->
+                </div>
+            </div>
         </div>
     </main>
     
     <footer>
-        <p>&copy; 2024 Farmers Page. All rights reserved.</p>
+        <p>&copy; 2025 Farmers Page. All rights reserved.</p>
     </footer>
+    <script>
+        function goToSite1() {
+            window.location.href = 'Site1.html';
+        }
+        function goToSite2() {
+            window.location.href = 'Site2.html';
+        }
+        function goToSite3() {
+            window.location.href = 'Site3.html';
+        }
+        function goToSite4() {
+            window.location.href = 'Site4.html';
+        }
+        function goToSite5() {
+            window.location.href = 'Site5.html';
+        }
+    </script>
 </body>
 </html>
