@@ -10,6 +10,10 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
+    background-image: url('grass.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -17,16 +21,16 @@ body {
 
 /* Header styles */
 header {
-    background:#2c5530;
+    background: #4a6b3f;
     color: white;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 header h1 {
     text-align: center;
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
@@ -153,10 +157,11 @@ p {
 
 /* Footer */
 footer {
-    background-color: #2c5530;
+    background-color: #4a6b3f;
     color: white;
     text-align: center;
-    padding: 1rem 0;
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
 }
 
 /* Back Button */
@@ -209,7 +214,7 @@ footer {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1000;
+    z-index: 1001;
     pointer-events: none;
     display: flex;
     align-items: center;
@@ -219,9 +224,9 @@ footer {
 }
 
 .rock {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #392a20b2, #563c2f9d, #b3a18f6e);
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #392a20, #563c2f, #b3a18f);
     border-radius: 20% 80% 30% 70% / 60% 40% 80% 20%;
     box-shadow: 
         0 8px 16px rgba(0, 0, 0, 0.3),
@@ -230,6 +235,7 @@ footer {
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     pointer-events: auto;
+    z-index: 1001;
 }
 
 .rock::before {
@@ -477,8 +483,8 @@ footer {
     }
     
     .rock {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
     }
     
     .rock:hover {
@@ -506,8 +512,8 @@ footer {
     }
     
     .rock {
-        width: 40px;
-        height: 40px;
+        width: 48px;
+        height: 48px;
     }
     
     .rock:hover {
