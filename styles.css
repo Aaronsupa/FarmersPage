@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -6,7 +8,8 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Caveat Brush', cursive;
+    font-style: 400;
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
@@ -534,3 +537,4 @@ footer {
         height: 45px;
     }
 }
+
