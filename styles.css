@@ -9,7 +9,7 @@
 
 body {
     font-family: 'Caveat Brush', cursive;
-    font-style: 400;
+    font-weight: 400;
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
@@ -537,4 +537,5 @@ footer {
         height: 45px;
     }
 }
+
 
