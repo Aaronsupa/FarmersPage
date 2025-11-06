@@ -24,7 +24,7 @@ body {
 
 /* Header styles */
 header {
-    background: #4a6b3faa;
+    background: rgba(74, 107, 63, 0.6);
     color: white;
     padding: 0.5rem 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -537,6 +537,7 @@ footer {
         height: 45px;
     }
 }
+
 
 
 
