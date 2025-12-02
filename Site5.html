@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmers Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>What can you do?</h1>
+    </header>
+    
+    <main>
+        <div class="content-wrapper">
+            <div class="lorem-content">
+                <h2>Get Involved!</h2>
+                <p style="text-indent: 2em;"> Over the course of our project, we have seen the importance of engaging communities to help support urban agriculture and community garden initiatives. Now, we want to give some resources and places for you to get involved in and around Austin!</p>
+                
+                <p style="text-indent: 2em; margin-bottom: 0.5rem;"><strong>At the University of Texas at Austin:</strong></p>
+                <ul style="margin-left: 4em; margin-bottom: 2rem;">
+                    <li>UT Microfarm</li>
+                    <li>UT Farmstand</li>
+                    <li>University Housing and Dining</li>
+                    <li>Student Organizations</li>
+                </ul>
+                
+                <p style="text-indent: 2em; margin-bottom: 0.5rem;"><strong>In the city of Austin:</strong></p>
+                <ul style="margin-left: 4em;">
+                    <li>Deep Eddy</li>
+                    <li>Fruitful Commons</li>
+                    <li>Central Texas Food Bank</li>
+                    <li>Festival Beach Food Forest</li>
+                </ul>                
+                <button class="prev-button" onclick="prevPage()">
+                    <span class="link-text">Finishing up</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="back-button" onclick="home()">
+            <a class="link-text" href="index.html">Back to Home</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Farmers Page. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function home() {
+            window.location.href = 'index.html';
+        }
+
+        function prevPage() {
+            window.location.href = 'Site4.html';
+        }
+    </script>
+
+</body>
+</html>

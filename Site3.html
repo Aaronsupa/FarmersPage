@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmers Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Research in Scandinavia</h1>
+    </header>
+    
+    <main>
+        <div class="content-wrapper">
+            <div class="lorem-content">
+                <h2>To Scandinavia</h2>
+                <button class="prev-button" onclick="prevPage()">
+                    <span class="link-text">Austin Research</span>
+                </button>
+                <button class="next-button" onclick="nextPage()">
+                    <span class="link-text">Back in Austin</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="back-button" onclick="home()">
+            <a class="link-text" href="index.html">Back to Home</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Farmers Page. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function home() {
+            window.location.href = 'index.html';
+        }
+
+        function prevPage() {
+            window.location.href = 'Site2.html';
+        }
+
+        function nextPage() {
+            window.location.href = 'Site4.html';
+        }
+    </script>
+
+</body>
+</html>
