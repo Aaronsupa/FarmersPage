@@ -245,11 +245,19 @@ footer {
     flex-wrap: wrap;
 }
 
-/* Clearfix for buttons */
+/* Clearfix for buttons - ensures buttons are on same line */
 .lorem-content::after {
     content: '';
     display: table;
     clear: both;
+}
+
+/* Ensure buttons align on same baseline */
+.prev-button,
+.next-button {
+    line-height: 1.5;
+    min-height: 44px;
+    box-sizing: border-box;
 }
 
 /* Next Button (bottom-right of content section) */
@@ -271,7 +279,8 @@ footer {
     font-family: 'Times New Roman', Times, serif;
     float: right;
     margin-top: 1.5rem;
-    clear: both;
+    margin-bottom: 0;
+    vertical-align: top;
 }
 
 .next-button::after {
@@ -310,7 +319,8 @@ footer {
     font-family: 'Times New Roman', Times, serif;
     float: left;
     margin-top: 1.5rem;
-    clear: both;
+    margin-bottom: 0;
+    vertical-align: top;
 }
 
 .prev-button::before {
@@ -662,10 +672,13 @@ footer {
         overflow-x: auto;
         overflow-y: visible;
         -webkit-overflow-scrolling: touch;
-        padding: 3rem 1rem;
+        padding: 3rem 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
         justify-content: flex-start;
         gap: 30px;
         margin: 2rem 0;
+        box-sizing: border-box;
     }
     
     main {
@@ -673,8 +686,10 @@ footer {
         -webkit-overflow-scrolling: touch;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         min-height: 60vh;
+        padding-left: 0;
+        padding-right: 0;
     }
     
     .rock {
@@ -742,12 +757,16 @@ footer {
     .rock-path {
         gap: 25px;
         min-width: 550px;
-        padding: 2.5rem 0.5rem;
+        padding: 2.5rem 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
         margin: 1.5rem 0;
     }
     
     main {
         min-height: 50vh;
+        padding-left: 0;
+        padding-right: 0;
     }
     
     .rock {

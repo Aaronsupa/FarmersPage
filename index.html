@@ -41,16 +41,23 @@
                 transform: none;
                 min-width: 600px;
                 max-width: 100%;
-                padding: 3rem 1rem;
+                padding: 3rem 2rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
                 margin: 2rem 0;
                 gap: 30px;
+                box-sizing: border-box;
             }
             
             main {
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-start;
                 min-height: 60vh;
+                padding-left: 0;
+                padding-right: 0;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
             }
         }
     </style>
