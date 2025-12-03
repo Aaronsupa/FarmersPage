@@ -215,7 +215,7 @@ footer {
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .back-button:hover {
@@ -268,7 +268,7 @@ footer {
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     float: right;
     margin-top: 1.5rem;
     clear: both;
@@ -307,7 +307,7 @@ footer {
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     float: left;
     margin-top: 1.5rem;
     clear: both;
@@ -468,7 +468,7 @@ footer {
     overflow: visible;
     pointer-events: none;
     text-align: center;
-    font-family: 'Caveat Brush', cursive;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /* Rock image tooltips - multiple images at different angles */
